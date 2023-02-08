@@ -1,12 +1,15 @@
-import styled from "@emotion/styled";
-import { Button, Typography } from "@mui/material";
-import Stack from "@mui/material/Stack";
-import { FC, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getRouteConfirmation, getRouteСalculation } from "shared/consts/routes";
-import { Field } from "shared/ui/Field";
-import { Input } from "shared/ui/Input";
-import { MuiDateTimePicker } from "shared/ui/MuiDatePicker";
+import styled from '@emotion/styled';
+import { Button, Typography } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+    getRouteConfirmation,
+    getRouteСalculation,
+} from 'shared/consts/routes';
+import { Field } from 'shared/ui/Field';
+import { Input } from 'shared/ui/Input';
+import { MuiDateTimePicker } from 'shared/ui/MuiDatePicker';
 
 const StContainer = styled(Stack)`
     max-width: 640px;
@@ -50,8 +53,8 @@ const StButton = styled(Button)`
 
 const UserDataPage: FC = () => {
     const navigate = useNavigate();
-    const [age, setAge] = useState("1");
-    const [value, setValue] = useState<string | null>("");
+    const [age, setAge] = useState('1');
+    const [value, setValue] = useState<string | null>('');
 
     const handleChange = (v: any) => {
         setAge(v.target.value);
@@ -74,16 +77,16 @@ const UserDataPage: FC = () => {
                 Данные покупателя
             </Typography>
             <Field label="Фамилия">
-                <Input value={age} onChange={handleChange} />
+                {/* <Input value={age} onChange={handleChange} /> */}
             </Field>
             <Field label="Имя">
-                <Input value={age} onChange={handleChange} />
+                {/* <Input value={age} onChange={handleChange} /> */}
             </Field>
             <Field label="Отчество">
-                <Input value={age} onChange={handleChange} />
+                {/* <Input value={age} onChange={handleChange} /> */}
             </Field>
             <Field label="Номер телефона" startItems>
-                <Input value={age} onChange={handleChange} />
+                {/* <Input value={age} onChange={handleChange} /> */}
             </Field>
             <Field label="Дата рождения">
                 <MuiDateTimePicker />
