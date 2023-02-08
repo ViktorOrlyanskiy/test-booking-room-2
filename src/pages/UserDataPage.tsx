@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { getRouteConfirmation, getRouteСalculation } from "shared/consts/routes";
 import { Field } from "shared/ui/Field";
 import { Input } from "shared/ui/Input";
+import { MuiDateTimePicker } from "shared/ui/MuiDatePicker";
 
 const StContainer = styled(Stack)`
     max-width: 640px;
@@ -15,7 +16,7 @@ const StContainer = styled(Stack)`
     border: 1px solid green;
 
     @media (max-width: 500px) {
-        height: 100%;
+        height: auto;
         padding: 10px;
     }
 `;
@@ -50,6 +51,7 @@ const StButton = styled(Button)`
 const UserDataPage: FC = () => {
     const navigate = useNavigate();
     const [age, setAge] = useState("1");
+    const [value, setValue] = useState<string | null>("");
 
     const handleChange = (v: any) => {
         setAge(v.target.value);
@@ -84,7 +86,7 @@ const UserDataPage: FC = () => {
                 <Input value={age} onChange={handleChange} />
             </Field>
             <Field label="Дата рождения">
-                <Input value={age} onChange={handleChange} />
+                <MuiDateTimePicker />
             </Field>
 
             <StButtonContainer>

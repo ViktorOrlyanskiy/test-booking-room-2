@@ -1,12 +1,9 @@
 import styled from "@emotion/styled";
 import { Button, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-import { getRouteConfirmation, getRouteSuccess, getRouteUserData } from "shared/consts/routes";
-import { useMatchMedia } from "shared/hooks/useMatchMedia";
-import { Field } from "shared/ui/Field";
-import { Input } from "shared/ui/Input";
+import { getRouteSuccess, getRouteUserData } from "shared/consts/routes";
 
 const StContainer = styled(Stack)`
     max-width: 640px;
@@ -16,7 +13,7 @@ const StContainer = styled(Stack)`
     border: 1px solid green;
 
     @media (max-width: 500px) {
-        height: 100%;
+        height: auto;
         padding: 10px;
     }
 `;
