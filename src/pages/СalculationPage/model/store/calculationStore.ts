@@ -1,7 +1,6 @@
 import { calculation } from '../../lib/calculation';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { CalculationSchema } from '../types/calculationSchema';
 
 interface CalculationState {
     adults: string;
