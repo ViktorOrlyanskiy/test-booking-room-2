@@ -1,16 +1,16 @@
-import СalculationPage from "pages/СalculationPage";
-import UserDataPage from "pages/UserDataPage";
-import ConfirmationPage from "pages/ConfirmationPage";
-import SuccessPage from "pages/SuccessPage";
-import NotFoundPage from "pages/NotFoundPage";
-import type { RouteProps } from "react-router-dom";
+import СalculationPage from 'pages/СalculationPage';
+import UserDataPage from 'pages/UserDataPage';
+import ConfirmationPage from 'pages/ConfirmationPage';
+import SuccessPage from 'pages/SuccessPage';
+import NotFoundPage from 'pages/NotFoundPage';
+import type { RouteProps } from 'react-router-dom';
 import {
     AppRoutes,
     getRouteСalculation,
     getRouteConfirmation,
     getRouteSuccess,
     getRouteUserData,
-} from "shared/consts/routes";
+} from 'shared/consts/routes';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -35,7 +35,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
 
     [AppRoutes.NOT_FOUND]: {
-        path: "*",
+        path: '*',
         element: <NotFoundPage />,
         authOnly: false,
     },
