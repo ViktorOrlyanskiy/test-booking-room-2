@@ -136,6 +136,7 @@ const UserDataPage: FC = () => {
             </Field>
             <Field label="Номер телефона" errorMessage={errors?.phone?.message}>
                 <Input
+                    type="tel"
                     placeholder="+7 XXX-XXX-XX-XX"
                     error={!!errors?.phone?.message}
                     {...register('phone')}

@@ -9,13 +9,15 @@ const StInput = styled(TextField)`
 interface InputProps {
     error: boolean;
     placeholder?: any;
+    type?: any;
 }
 
 export const Input: FC<InputProps> = forwardRef(
-    ({ error, placeholder, ...otherProps }, ref) => {
+    ({ error, placeholder, type, ...otherProps }, ref) => {
         return (
             <StInput
                 inputRef={ref}
+                type={type}
                 error={error}
                 size="small"
                 placeholder={placeholder}

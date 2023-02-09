@@ -122,6 +122,7 @@ const СalculationPage: FC = () => {
                 errorMessage={errors?.adults?.message}
             >
                 <Input
+                    type="number"
                     error={!!errors?.adults?.message}
                     {...register('adults')}
                 />
@@ -131,6 +132,7 @@ const СalculationPage: FC = () => {
                 errorMessage={errors?.teenagers?.message}
             >
                 <Input
+                    type="number"
                     error={!!errors?.teenagers?.message}
                     {...register('teenagers')}
                 />
@@ -140,6 +142,7 @@ const СalculationPage: FC = () => {
                 errorMessage={errors?.children?.message}
             >
                 <Input
+                    type="number"
                     error={!!errors?.children?.message}
                     {...register('children')}
                 />
@@ -156,6 +159,7 @@ const СalculationPage: FC = () => {
                 errorMessage={errors?.nights?.message}
             >
                 <Input
+                    type="number"
                     error={!!errors?.nights?.message}
                     {...register('nights')}
                 />
