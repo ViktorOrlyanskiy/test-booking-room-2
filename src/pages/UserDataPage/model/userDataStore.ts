@@ -9,6 +9,7 @@ interface UserDataState {
     dateBirth: any;
 
     setValues: (v: any) => void;
+    resetStore: () => void;
 }
 const initState = {
     surname: '',
@@ -27,6 +28,13 @@ export const useUserDataStore = create<UserDataState>()(
                     return {
                         ...state,
                         ...values,
+                    };
+                }),
+            resetStore: () =>
+                set((state) => {
+                    return {
+                        ...state,
+                        ...initState,
                     };
                 }),
         }),

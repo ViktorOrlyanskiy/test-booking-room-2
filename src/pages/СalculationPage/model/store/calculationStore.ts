@@ -13,6 +13,7 @@ interface CalculationState {
     fullCost: number;
     setValues: (v: any) => void;
     setFullCost: (v: any) => void;
+    resetStore: () => void;
 }
 const initState = {
     adults: '1',
@@ -37,6 +38,13 @@ export const useCalculationStore = create<CalculationState>()(
                 }),
             setFullCost: (values) =>
                 set((state) => ({ ...state, fullCost: calculation(values) })),
+            resetStore: () =>
+                set((state) => {
+                    return {
+                        ...state,
+                        ...initState,
+                    };
+                }),
         }),
         {
             name: 'calculation-storage',
