@@ -61,7 +61,9 @@ const StButton = styled(Button)`
     margin-top: auto;
 
     @media (max-width: 500px) {
+        margin-top: 0;
         margin-left: 0;
+        padding: 5px 10px;
     }
 `;
 

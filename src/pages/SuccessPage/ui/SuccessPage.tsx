@@ -19,6 +19,7 @@ const StContainer = styled(Stack)`
     box-shadow: 0px 0px 6px 1px rgba(36, 72, 99, 0.2);
 
     @media (max-width: 500px) {
+        position: relative;
         height: 100vh;
         padding: 10px;
         border-radius: none;
@@ -36,6 +37,9 @@ const StButtonContainer = styled(Stack)`
 
 const StButton = styled(Button)`
     padding: 5px 30px;
+    @media (max-width: 500px) {
+        padding: 5px 10px;
+    }
 `;
 
 const SuccessPage: FC = () => {

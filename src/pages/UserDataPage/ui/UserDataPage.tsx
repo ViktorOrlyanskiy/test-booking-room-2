@@ -43,8 +43,10 @@ const StButtonContainer = styled(Stack)`
         flex: 1 1 auto;
         flex-direction: column-reverse;
         justify-content: flex-start;
-        gap: 10px;
         padding-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
     }
 `;
 
@@ -54,9 +56,20 @@ const StButton = styled(Button)`
 
     @media (max-width: 500px) {
         width: 100%;
+        padding: 5px 10px;
         margin-left: 0;
-
         margin-top: 0;
+    }
+`;
+
+const StLastButton = styled(Button)`
+    padding: 5px 30px;
+    margin-top: auto;
+
+    @media (max-width: 500px) {
+        width: 100%;
+        padding: 5px 10px;
+        margin-top: 10px;
     }
 `;
 
@@ -136,9 +149,9 @@ const UserDataPage: FC = () => {
             </Field>
 
             <StButtonContainer>
-                <StButton variant="outlined" onClick={handleClickBack}>
+                <StLastButton variant="outlined" onClick={handleClickBack}>
                     Назад к расчету стоимости
-                </StButton>
+                </StLastButton>
                 <StButton
                     variant="contained"
                     onClick={handleSubmit(handleClickNext)}
