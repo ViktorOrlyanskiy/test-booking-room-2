@@ -15,10 +15,14 @@ const StContainer = styled(Stack)`
     width: 100%;
     height: 700px;
     padding: 16px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 1px rgba(36, 72, 99, 0.2);
 
     @media (max-width: 500px) {
         height: 100vh;
         padding: 10px;
+        border-radius: none;
+        box-shadow: none;
     }
 `;
 

@@ -16,11 +16,14 @@ const StContainer = styled(Stack)`
     width: 100%;
     height: 700px;
     padding: 16px 20px;
-    border: 1px solid green;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 1px rgba(36, 72, 99, 0.2);
 
     @media (max-width: 500px) {
         height: 100vh;
         padding: 10px;
+        border-radius: none;
+        box-shadow: none;
     }
 `;
 
@@ -87,11 +90,11 @@ const ConfirmationPage: FC = () => {
 
     const teenagersStr =
         teenagers !== '0'
-            ? `${teenagers} ${getChildrenWord(teenagers)} от 5 до 12 лет`
+            ? `, ${teenagers} ${getChildrenWord(teenagers)} от 5 до 12 лет`
             : '';
     const childrenStr =
         children !== '0'
-            ? `${children} ${getChildrenWord(children)} до 5 лет`
+            ? ` и ${children} ${getChildrenWord(children)} до 5 лет`
             : '';
 
     return (
@@ -116,7 +119,8 @@ const ConfirmationPage: FC = () => {
                 {getNightWord(nights)}
             </Typography>
             <Typography mb={0.5}>
-                {adults} {getAdultWord(adults)} {teenagersStr} {childrenStr}
+                {adults} {getAdultWord(adults)}
+                {teenagersStr} {childrenStr}
             </Typography>
             <Typography mb={0.5}>
                 Страховка {insurance ? 'включена' : 'не включена'}
