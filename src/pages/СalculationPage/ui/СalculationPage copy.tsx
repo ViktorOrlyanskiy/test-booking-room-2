@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import { FC, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { getRouteUserData } from 'shared/consts/routes';
-import { useMatchMedia } from 'shared/hooks/useMatchMedia';
+import { FC, useState } from 'react';
 import { CheckboxField } from 'shared/ui/CheckboxField';
 import { Field } from 'shared/ui/Field';
 import { Input } from 'shared/ui/Input';
 import { RadioField } from 'shared/ui/RadioField';
-import { validationScheme } from '../lib/validationScheme';
+import { useMatchMedia } from 'shared/hooks/useMatchMedia';
+import { useNavigate } from 'react-router-dom';
+import { getRouteUserData } from 'shared/consts/routes';
 import { useCalculationStore } from '../model/store/calculationStore';
+import { useForm } from 'react-hook-form';
 import { CalculationSchema } from '../model/types/calculationSchema';
+import { validationScheme } from '../lib/validationScheme';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const StContainer = styled(Stack)`
     max-width: 640px;
@@ -65,25 +65,22 @@ const StButton = styled(Button)`
 const СalculationPage: FC = () => {
     const navigate = useNavigate();
     const { isMobile } = useMatchMedia();
-    const fullCost = useCalculationStore((state) => state.fullCost);
     const setValues = useCalculationStore((state) => state.setValues);
-    const setFullCost = useCalculationStore((state) => state.setFullCost);
     const {
         register,
         getValues,
         setValue,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm<CalculationSchema>({
         mode: 'onChange',
         defaultValues: {
-            adults: useCalculationStore((state) => state.adults),
-            teenagers: useCalculationStore((state) => state.teenagers),
-            children: useCalculationStore((state) => state.children),
-            roomType: useCalculationStore((state) => state.roomType),
-            nights: useCalculationStore((state) => state.nights),
-            insurance: useCalculationStore((state) => state.insurance),
+            adults: '',
+            teenagers: '',
+            children: '',
+            roomType: 'economy',
+            nights: '',
+            insurance: true,
         },
         resolver: yupResolver(validationScheme),
     });
@@ -91,18 +88,11 @@ const СalculationPage: FC = () => {
     const changeRoomType = (value: any) => {
         setValue('roomType', value);
     };
-
-    const handleClickNext = () => {
-        navigate(getRouteUserData());
+    const handleClickNext = (values: CalculationSchema) => {
+        console.log(values);
+        setValues(values);
+        // navigate(getRouteUserData());
     };
-
-    useEffect(() => {
-        const subscription = watch((values: CalculationSchema) => {
-            setValues(values);
-            setFullCost(values);
-        });
-        return () => subscription.unsubscribe();
-    }, [setFullCost, setValues, watch]);
 
     return (
         <StContainer direction="column">
@@ -164,7 +154,7 @@ const СalculationPage: FC = () => {
                         textAlign={isMobile ? 'right' : undefined}
                         fontWeight="700"
                     >
-                        {fullCost} ₽
+                        1234 руб
                     </Typography>
                 </Field>
             </StField>

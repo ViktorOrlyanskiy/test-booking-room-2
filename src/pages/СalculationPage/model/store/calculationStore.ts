@@ -1,6 +1,7 @@
+import { calculation } from '../../lib/calculation';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { immer } from 'zustand/middleware/immer';
+import { CalculationSchema } from '../types/calculationSchema';
 
 interface CalculationState {
     adults: string;
@@ -9,24 +10,34 @@ interface CalculationState {
     roomType: string;
     nights: string;
     insurance: boolean;
+    fullCost: number;
     setValues: (v: any) => void;
+    setFullCost: (v: any) => void;
 }
+const initState = {
+    adults: '1',
+    teenagers: '',
+    children: '',
+    roomType: 'economy',
+    nights: '1',
+    insurance: true,
+    fullCost: 1980,
+};
 
 export const useCalculationStore = create<CalculationState>()(
     persist(
-        immer((set) => ({
-            adults: '',
-            teenagers: '',
-            children: '',
-            roomType: 'economy',
-            nights: '',
-            insurance: true,
-
+        (set) => ({
+            ...initState,
             setValues: (values) =>
                 set((state) => {
-                    state = { ...values };
+                    return {
+                        ...state,
+                        ...values,
+                    };
                 }),
-        })),
+            setFullCost: (values) =>
+                set((state) => ({ ...state, fullCost: calculation(values) })),
+        }),
         {
             name: 'calculation-storage',
         }
