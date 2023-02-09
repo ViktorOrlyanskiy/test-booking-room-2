@@ -20,8 +20,8 @@ export const RadioField: FC<Props> = ({ name, value, onChange }) => {
     const [currentValue, setCurrentValue] = useState(value);
 
     const handleChangeValue = (e: any) => {
-        setCurrentValue(e.currentTarget.value);
-        onChange(e.currentTarget.value);
+        setCurrentValue(e.target.value);
+        onChange(e.target.value);
     };
 
     return isMobile ? (

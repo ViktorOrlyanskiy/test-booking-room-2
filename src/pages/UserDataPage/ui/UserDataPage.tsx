@@ -24,7 +24,7 @@ const StContainer = styled(Stack)`
     border: 1px solid green;
 
     @media (max-width: 500px) {
-        height: auto;
+        height: 100vh;
         padding: 10px;
     }
 `;

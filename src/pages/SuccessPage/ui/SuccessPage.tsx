@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
-import { Button, Typography } from "@mui/material";
-import Stack from "@mui/material/Stack";
-import { FC } from "react";
-import { useNavigate } from "react-router-dom";
-import { getRouteСalculation } from "shared/consts/routes";
-import { SuccessIcon } from "shared/assets/successIcon";
+import styled from '@emotion/styled';
+import { Button, Typography } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getRouteСalculation } from 'shared/consts/routes';
+import { SuccessIcon } from 'shared/assets/successIcon';
 
 const StContainer = styled(Stack)`
     max-width: 640px;
@@ -15,10 +15,9 @@ const StContainer = styled(Stack)`
     width: 100%;
     height: 700px;
     padding: 16px 20px;
-    border: 1px solid green;
 
     @media (max-width: 500px) {
-        height: auto;
+        height: 100vh;
         padding: 10px;
     }
 `;
