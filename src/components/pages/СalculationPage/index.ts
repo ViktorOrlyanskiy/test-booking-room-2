@@ -1,2 +1,2 @@
-import СalculationPage from "./ui/СalculationPage";
+import СalculationPage from './СalculationPage';
 export default СalculationPage;

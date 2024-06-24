@@ -1,2 +1,2 @@
-import ConfirmationPage from './ui/ConfirmationPage';
+import ConfirmationPage from './ConfirmationPage';
 export default ConfirmationPage;

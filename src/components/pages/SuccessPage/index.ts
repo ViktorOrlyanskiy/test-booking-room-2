@@ -1,2 +1,2 @@
-import SuccessPage from './ui/SuccessPage';
+import SuccessPage from './SuccessPage';
 export default SuccessPage;

@@ -31,9 +31,9 @@ export const RadioField: FC<Props> = ({ name, value, onChange }) => {
                 value={currentValue}
                 onChange={handleChangeValue}
             >
-                <MenuItem value="economy">Эконом</MenuItem>
-                <MenuItem value="standart">Стандарт</MenuItem>
-                <MenuItem value="luxury">Люкс</MenuItem>
+                <MenuItem value="ECON">Эконом</MenuItem>
+                <MenuItem value="STD">Стандарт</MenuItem>
+                <MenuItem value="LUX">Люкс</MenuItem>
             </Select>
         </FormControl>
     ) : (
@@ -43,17 +43,17 @@ export const RadioField: FC<Props> = ({ name, value, onChange }) => {
             onChange={handleChangeValue}
         >
             <FormControlLabel
-                value="economy"
+                value="ECON"
                 control={<Radio size="small" />}
                 label="Эконом"
             />
             <FormControlLabel
-                value="standart"
+                value="STD"
                 control={<Radio size="small" />}
                 label="Стандарт"
             />
             <FormControlLabel
-                value="luxury"
+                value="LUX"
                 control={<Radio size="small" />}
                 label="Люкс"
             />
