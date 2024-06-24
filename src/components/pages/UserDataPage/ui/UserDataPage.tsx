@@ -7,11 +7,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 import {
     getRouteConfirmation,
-    getRouteСalculation,
+    getRouteCalculation,
 } from 'shared/consts/routes';
-import { Field } from 'shared/ui/Field';
-import { Input } from 'shared/ui/Input';
-import { MuiDateTimePicker } from 'shared/ui/MuiDatePicker';
+import { Field } from 'components/common/Field';
+import { Input } from 'components/common/Input';
+import { MuiDateTimePicker } from 'components/common/MuiDatePicker';
 import { UserDataSchema } from '../model/userDataSchema';
 import { useUserDataStore } from '../model/userDataStore';
 import { validationScheme } from '../lib/validationScheme';
@@ -100,7 +100,7 @@ const UserDataPage: FC = () => {
     };
 
     const handleClickBack = () => {
-        navigate(getRouteСalculation());
+        navigate(getRouteCalculation());
     };
 
     const handleClickNext = () => {

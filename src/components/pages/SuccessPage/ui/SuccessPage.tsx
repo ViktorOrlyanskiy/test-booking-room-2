@@ -3,7 +3,7 @@ import { Button, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getRouteСalculation } from 'shared/consts/routes';
+import { getRouteCalculation } from 'shared/consts/routes';
 import { SuccessIcon } from 'shared/assets/successIcon';
 
 const StContainer = styled(Stack)`
@@ -45,7 +45,7 @@ const StButton = styled(Button)`
 const SuccessPage: FC = () => {
     const navigate = useNavigate();
     const handleClickNext = () => {
-        navigate(getRouteСalculation());
+        navigate(getRouteCalculation());
     };
     return (
         <StContainer direction="column">

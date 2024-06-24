@@ -1,12 +1,12 @@
-import СalculationPage from 'pages/СalculationPage';
-import UserDataPage from 'pages/UserDataPage';
-import ConfirmationPage from 'pages/ConfirmationPage';
-import SuccessPage from 'pages/SuccessPage';
-import NotFoundPage from 'pages/NotFoundPage';
+import СalculationPage from 'components/pages/СalculationPage';
+import UserDataPage from 'components/pages/UserDataPage';
+import ConfirmationPage from 'components/pages/ConfirmationPage';
+import SuccessPage from 'components/pages/SuccessPage';
+import NotFoundPage from 'components/pages/NotFoundPage';
 import type { RouteProps } from 'react-router-dom';
 import {
     AppRoutes,
-    getRouteСalculation,
+    getRouteCalculation,
     getRouteConfirmation,
     getRouteSuccess,
     getRouteUserData,
@@ -18,7 +18,7 @@ export type AppRoutesProps = RouteProps & {
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.СALCULATION]: {
-        path: getRouteСalculation(),
+        path: getRouteCalculation(),
         element: <СalculationPage />,
     },
     [AppRoutes.USER_DATA]: {
